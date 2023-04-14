@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "cba34c76-5593-4f2a-9969-53218e1770c0",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/palindrome",
+    "url": "http://localhost:3000/palindrome",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-04-14T14:46:04.069Z",
+    "modified": "2023-04-14T14:46:04.069Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "1448089a-ee6a-4635-8adf-98e9d0a4470d",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/palindrome",
+    "url": "http://localhost:3000/palindrome",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-14T14:46:21.434Z",
+    "modified": "2023-04-14T14:51:14.562Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\"word\":\"civic\"}",
+      "form": []
+    },
+    "tests": []
+  }
+]
