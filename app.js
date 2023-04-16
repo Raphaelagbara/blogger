@@ -4,6 +4,7 @@ import path from "path";
 const __dirname = path.resolve();
 import morgan from "morgan";
 import { createWriteStream } from "fs";
+import session from "express-session";
 const app = express();
 
 const logFile = join(__dirname, "blogger.log");
@@ -20,27 +21,58 @@ app.use("/assets", express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// mounting session middleware to admin route
+app.use(
+  "/admin",
+  session({
+    name: "sessId",
+    resave: false,
+    saveUninitialized: true,
+    secret:
+      app.get("env") === "production"
+        ? process.env.sessionSecret
+        : "2bb375d5abe58776bbf28695",
+    cookie: {
+      secure: app.get("env") === "production" ? true : false,
+      httpOnly: true,
+      maxAge: 18000000, // 5 hours
+    },
+  })
+);
+
 app.set("view engine", "pug");
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1>Welcome to Blogger app");
 });
 
+//checking for a logged in admin
+
 app
+  .get("/admin", (req, res) => {
+    if (req.session.user) {
+      return res.redirect("/admin/dashboard");
+    }
+
+    res.redirect("/admin/login");
+  })
   .get("/admin/login", (req, res) => {
     res.render("login");
   })
   .post("/admin/login", (req, res) => {
     const { email, password } = req.body;
-    console.log("E-Mail:", email);
-    console.log("Password:", password);
+    //implementing server side sessions using hard coded values
+    if (email === "homer@springfield.com" && password === "donuts") {
+      req.session.user = "Raphael A";
+      return res.redirect("/admin/dashboard");
+    }
     res.redirect("/admin/dashboard");
   });
 
 
 app.get("/admin/dashboard", (req, res) => {
     res.render("dashboard", {
-      user: " Raphael A",
+      user: req.session.user,
       posts: [
         {
           id: 1,
@@ -59,12 +91,12 @@ app.get("/admin/dashboard", (req, res) => {
     });
 });
 
-app.post("/admin/approve",(req,res)=>res.redirect("/admin/dashboard"));
-
-
-app.get("/admin/logout",(req,res)=>{
-    res.redirect("/admin/login");
+app.get("/admin/logout", (req, res) => {
+  delete req.session.user;
+  res.redirect("/admin/login");
 })
+.post("/admin/approve",(req,res)=>res.redirect("/admin/dashboard"));
+
 
 app.post("/api/posts", (req, res) => {
   console.log(req.body);
