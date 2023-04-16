@@ -33,3 +33,7 @@ GET - /admin/logout - Sun, 16 Apr 2023 16:53:29 GMT - 3.857 ms
 GET - /admin/login - Sun, 16 Apr 2023 16:53:29 GMT - 18.489 ms
 GET - /assets/css/style.css - Sun, 16 Apr 2023 16:53:29 GMT - 1.418 ms
 GET - /assets/js/main.js - Sun, 16 Apr 2023 16:53:29 GMT - 14.921 ms
+GET - /admin/dashboard - Sun, 16 Apr 2023 17:06:16 GMT - 16.969 ms
+GET - /admin/login - Sun, 16 Apr 2023 17:06:16 GMT - 638.317 ms
+GET - /assets/css/style.css - Sun, 16 Apr 2023 17:06:16 GMT - 3.947 ms
+GET - /assets/js/main.js - Sun, 16 Apr 2023 17:06:16 GMT - 1.803 ms
