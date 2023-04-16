@@ -19,3 +19,17 @@ GET - /admin/logout - Sun, 16 Apr 2023 16:48:27 GMT - 2.191 ms
 GET - /admin/login - Sun, 16 Apr 2023 16:48:27 GMT - 14.745 ms
 GET - /assets/css/style.css - Sun, 16 Apr 2023 16:48:27 GMT - 1.136 ms
 GET - /assets/js/main.js - Sun, 16 Apr 2023 16:48:27 GMT - 0.659 ms
+POST - /admin/login - Sun, 16 Apr 2023 16:52:50 GMT - 62.409 ms
+GET - /admin/dashboard - Sun, 16 Apr 2023 16:52:50 GMT - 704.120 ms
+GET - /assets/css/style.css - Sun, 16 Apr 2023 16:52:50 GMT - 5.009 ms
+GET - /admin/logout - Sun, 16 Apr 2023 16:52:59 GMT - 3.306 ms
+GET - /admin/login - Sun, 16 Apr 2023 16:52:59 GMT - 23.637 ms
+GET - /assets/css/style.css - Sun, 16 Apr 2023 16:53:00 GMT - 2.422 ms
+GET - /assets/js/main.js - Sun, 16 Apr 2023 16:53:00 GMT - 24.345 ms
+POST - /admin/login - Sun, 16 Apr 2023 16:53:20 GMT - 3.753 ms
+GET - /admin/dashboard - Sun, 16 Apr 2023 16:53:21 GMT - 84.077 ms
+GET - /assets/css/style.css - Sun, 16 Apr 2023 16:53:21 GMT - 1.092 ms
+GET - /admin/logout - Sun, 16 Apr 2023 16:53:29 GMT - 3.857 ms
+GET - /admin/login - Sun, 16 Apr 2023 16:53:29 GMT - 18.489 ms
+GET - /assets/css/style.css - Sun, 16 Apr 2023 16:53:29 GMT - 1.418 ms
+GET - /assets/js/main.js - Sun, 16 Apr 2023 16:53:29 GMT - 14.921 ms
