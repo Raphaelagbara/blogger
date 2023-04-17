@@ -50,3 +50,8 @@ GET - /api/post/6 - Mon, 17 Apr 2023 10:41:39 GMT - 10.175 ms
 GET - /api/post/6 - Mon, 17 Apr 2023 10:41:40 GMT - 3.532 ms
 GET - /api/postss/6 - Mon, 17 Apr 2023 10:41:48 GMT - 2.072 ms
 GET - /api/postss/6 - Mon, 17 Apr 2023 10:41:50 GMT - 1.705 ms
+GET - /api/posts/6 - Mon, 17 Apr 2023 10:48:21 GMT - 8.153 ms
+GET - /api/post - Mon, 17 Apr 2023 10:48:28 GMT - 8.841 ms
+GET - /api/post - Mon, 17 Apr 2023 10:49:01 GMT - 1.035 ms
+POST - /api/post - Mon, 17 Apr 2023 10:49:15 GMT - 1.756 ms
+POST - /api/post - Mon, 17 Apr 2023 10:50:21 GMT - 4.504 ms

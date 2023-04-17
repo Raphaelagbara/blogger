@@ -6,16 +6,18 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": " dotenv node app.js",
+    "dev": "nodemon -r dotenv/config app.js"
   },
   "keywords": [],
   "author": "Raphael Agbara",
   "license": "ISC",
   "dependencies": {
     "compression": "^1.7.4",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
     "pug": "^3.0.2"

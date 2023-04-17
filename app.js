@@ -1,4 +1,5 @@
 import express, { request } from "express";
+import * as dotenv from "dotenv";
 import { join } from "path";
 import path from "path";
 const __dirname = path.resolve();
@@ -9,6 +10,9 @@ import compression from "compression";
 import home from "./routes/home/index.js";
 import admin from "./routes/admin/index.js";
 import api from "./routes/api/index.js";
+import connectToDb from "./db/index.js";
+
+dotenv.config();
 
 const app = express();
 
@@ -35,6 +39,7 @@ app.use(
   "/admin",
   session({
     name: "sessId",
+    secret: process.env.sessionSecret,
     resave: false,
     saveUninitialized: true,
     secret:
@@ -55,4 +60,11 @@ app.use("/", home);
 app.use("/admin", admin);
 app.use("/api", api);
 
-app.listen(3000, () => console.log("Listening on port 3000"));
+Promise.all([connectToDb()])
+  .then(() =>
+    app.listen(3000, () => console.log("Blogger is listening on port 3000"))
+  )
+  .catch((error) => {
+    console.error(`MongoDB Atlas Error: ${error}`);
+    process.exit();
+  });

@@ -7,6 +7,7 @@ import updatePost from "./update-post.js";
 import deletePost from "./delete-post.js";
 import getPost from "./get-post.js";
 import catchAll from "./catch-all.js";
+import protectApi from "../../utils/protectApi.js";
 
 const router = Router();
 
@@ -14,9 +15,9 @@ router.get("/posts", getPosts);
 router
   .route("/post/:postId?")
   .get(getPost)
-  .post(storePost)
+  .post(protectApi, storePost)
   .put(updatePost)
-  .delete(deletePost);
+  .delete(protectApi,deletePost);
 router.post("/login", loginUser);
 router.post("/signup", signUpUser);
 router.use(catchAll);
